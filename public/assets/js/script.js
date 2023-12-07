@@ -7,7 +7,7 @@ var images = [
   "https://static.wikia.nocookie.net/paw-patrol/images/6/64/Marshall_PNG.png",
   "https://i.pinimg.com/564x/c7/88/40/c788400e776933775153a036c97619b1.jpg",
   "https://static.wikia.nocookie.net/paw-patrol-patrulla-de-cachorros/images/a/ae/Skye.png",
-  "https://i.pinimg.com/564x/7d/c0/2d/7dc02d2ac52453126653616e44986aa5.jpg",
+  "https://static.wikia.nocookie.net/paw-patrol/images/5/59/Zuma_PNG.png",
   "https://static.wikia.nocookie.net/paw-patrol-patrulla-de-cachorros/images/1/14/Rubble.png",
   "https://static.wikia.nocookie.net/paw-patrol-patrulla-de-cachorros/images/3/38/Everest.png",
   "https://static.wikia.nocookie.net/paw-patrol-patrulla-de-cachorros/images/8/82/Rocky.png"
@@ -36,9 +36,9 @@ function start() {
   images.forEach((url) => {
     var img = document.createElement("img")
     var div = document.createElement("div")
-    div.setAttribute("class", "click-me img-container")
+    div.setAttribute("class", "click-me img-container w-[100px] h-[100px] flex items-center justify-center m-auto")
     img.setAttribute("src", url)
-    img.setAttribute("class", "flex items-center justify-center h-20 sm:h-48 md:h-64 m-auto")
+    img.setAttribute("class", "flex items-center w-full h-full justify-center w-full h-full")
     div.appendChild(img)
     appContainer.appendChild(div)
     div.addEventListener("click", handleClick)
