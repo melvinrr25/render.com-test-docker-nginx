@@ -1,7 +1,7 @@
-FROM smebberson/alpine-nginx-nodejs
+FROM node:current-alpine3.18
 WORKDIR /app
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+ENV PORT=3000
 COPY . .
 RUN npm i
-EXPOSE 80
-CMD node index
+EXPOSE $PORT
+CMD ["node", "index.js"]

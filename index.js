@@ -1,19 +1,19 @@
-'use strict';
-
+const path = require('path');
 const express = require('express');
 
 // Constants
-const PORT = 3000;
-const HOST = 'localhost';
-
+const PORT = process.env.PORT
 // App
 const app = express();
+
+// Serve the index.html file for the root path
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/health_check', (req, res) => {
-  res.send('200 OK');
-});
+// Define the directory for other static files (like CSS, JS, images, etc.)
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(PORT, HOST);
+app.listen(PORT, () => {
+  console.log(`Running on port: ${PORT}`);
+});
