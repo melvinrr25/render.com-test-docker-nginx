@@ -2,6 +2,7 @@ var appContainer = document.getElementById('app');
 var startContainer = document.querySelector('.start');
 var image1 = null
 var image2 = null
+var time = 0
 
 var images = [
   "https://static.wikia.nocookie.net/paw-patrol/images/6/64/Marshall_PNG.png",
@@ -30,6 +31,9 @@ function start() {
   shuffleArray(images)
   image1 = null
   image2 = null
+  setInterval(() => {
+    time++
+  }, 1000)
 
   appContainer.innerHTML = "";
 
@@ -82,7 +86,12 @@ function handleClick(e) {
         var audio = new Audio('assets/sounds/win.mp3');
         audio.play();
         setTimeout(() => {
-          start()
+          if(time > 59) {
+            alert("You won! Your time was " + Math.floor(time / 60) + " minutes and " + time % 60 + " seconds")
+          } else {
+            alert("You won! Your time was " + time + " seconds")
+          }
+          window.location.reload()
         }, 2000)
       }
     } else {

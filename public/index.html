@@ -6,14 +6,19 @@
   <meta name="viewport" content="width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>replit</title>
+  <title>Paw Patrol</title>
   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="flex items-center justify-center w-full h-full">
-  <div class="start">
+  <div class="start max-w-[500px] flex flex-col items-center justify-center">
     <img src="https://pawpatrolandfriends.com/cdn/shop/t/16/assets/paw-hero_x1000.png?v=164501904447251309591678733041"
-      alt="">
+      alt="" />
+    <span
+      class="text-2xl font-bold text-center text-gray-700 mt-4 cursor-pointer hover:text-gray-900 transition-all"
+    >
+      Click to start
+    </span>
   </div>
   <div class="grid grid-cols-3 gap-4 hidden" id="app"></div>
   <script src="assets/js/script.js"></script>
